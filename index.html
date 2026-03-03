@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clean Messaging App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section id="auth-card" class="auth-card">
+        <h1>Clean Messaging App</h1>
+        <p class="muted">Create an account or sign in to access your messages.</p>
+        <p class="top-link-row"><a href="/about.html">About this app</a></p>
+
+        <div class="tabs" role="tablist" aria-label="Authentication mode">
+          <button id="login-tab" class="tab active" type="button">Login</button>
+          <button id="register-tab" class="tab" type="button">Create account</button>
+        </div>
+
+        <form id="auth-form" class="auth-form">
+          <label>
+            Username
+            <input id="auth-username" type="text" minlength="3" required autocomplete="username" />
+          </label>
+
+          <label>
+            Password
+            <input id="auth-password" type="password" minlength="4" required autocomplete="current-password" />
+          </label>
+
+          <button id="auth-submit" type="submit">Login</button>
+        </form>
+
+        <p id="auth-feedback" class="feedback" aria-live="polite"></p>
+      </section>
+
+      <section id="app" class="app hidden">
+        <aside class="sidebar">
+          <header class="sidebar-header">
+            <h2>Messages</h2>
+            <div class="account-row">
+              <span id="account-name"></span>
+              <button id="logout-button" type="button">Logout</button>
+            </div>
+          </header>
+          <ul id="thread-list" class="thread-list"></ul>
+        </aside>
+
+        <section class="chat-panel">
+          <header class="chat-header">
+            <div>
+              <h2 id="active-thread-name">Select a conversation</h2>
+              <p id="active-thread-status">Offline</p>
+            </div>
+          </header>
+
+          <div id="message-list" class="message-list" aria-live="polite"></div>
+
+          <form id="composer" class="composer">
+            <input
+              id="message-input"
+              type="text"
+              placeholder="Type a message..."
+              autocomplete="off"
+              required
+            />
+            <button type="submit">Send</button>
+          </form>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
