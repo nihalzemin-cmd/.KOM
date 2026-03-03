@@ -1,0 +1,9 @@
+{
+  "name": "clean-messaging-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Server-backed messaging demo with account system",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
